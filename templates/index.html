@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="container">
+    <h1>📋 Job Application Tracker</h1>
+
+    <!-- Form to add a new job application -->
+    <form id="job-form">
+      <input type="text" id="company" placeholder="Company Name" required>
+      <input type="text" id="role" placeholder="Role / Position" required>
+      <input type="date" id="date_applied">
+      <select id="status">
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+      <input type="text" id="notes" placeholder="Notes (optional)">
+      <button type="submit">Add Application</button>
+    </form>
+
+    <!-- Table showing all job applications -->
+    <table id="jobs-table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Role</th>
+          <th>Date Applied</th>
+          <th>Status</th>
+          <th>Notes</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="jobs-body">
+        <!-- Rows get filled in automatically by script.js -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
